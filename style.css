@@ -13,25 +13,30 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px; /* Ensure some padding for smaller screens */
+  font-size: 14px; /* Adjust font size for mobile */
+  height: 100%;
+  width: 100%;
 }
 
-html,
-body {
+html, body {
   margin: 0;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: sans-serif;
 }
 
 .container {
   position: relative;
   padding: 20px;
+  width: 100%;
+  max-width: 400px; /* Limiting the max width for mobile devices */
+  box-sizing: border-box;
 }
 
 .score_container {
-  font-size: 16px;
+  font-size: 18px; /* Larger score font */
   text-align: center;
   margin: 10px 0;
 }
@@ -39,11 +44,12 @@ body {
 #restart_game {
   margin: 0 auto;
   display: block;
-  padding: 9px 5px;
+  padding: 12px 20px; /* More padding for mobile */
   background: #212121;
   color: #00ff80;
   font-weight: bold;
   border: none;
+  font-size: 14px;
 }
 
 .title {
@@ -51,19 +57,19 @@ body {
 }
 
 .game {
-  height: 225px;
-  width: 225px;
+  width: 100%;
+  aspect-ratio: 1; /* Maintains square aspect ratio */
+  max-width: 400px; /* Set a max width */
   background: #e0e0e0;
   margin: 0 auto;
+  position: relative;
 }
 
 .tile {
-  float: left;
-  margin: 0;
-  content: "";
+  width: 20%; /* Tiles should take 20% of the grid width */
+  height: 20%; /* Same for height to maintain square tiles */
   background: #e0e0e0;
   box-sizing: border-box;
-  position: relative;
   display: block;
   box-shadow: inset 0px 0px 0px 1px rgba(0, 134, 255, 0.05);
 }
@@ -81,4 +87,29 @@ body {
 .fruit {
   background: #00b35a;
   border-radius: 5px;
+}
+
+/* Make sure the game container adjusts for smaller screens */
+.container {
+  padding: 10px;
+}
+
+.game {
+  width: 100%;
+  aspect-ratio: 1;
+  max-width: 400px; /* Limiting the max width for mobile */
+}
+
+.tile {
+  width: 20%; /* Ensures tiles scale properly */
+  height: 20%;
+}
+
+.score_container {
+  font-size: 18px;
+}
+
+#restart_game {
+  font-size: 14px;
+  padding: 10px;
 }
